@@ -1,0 +1,48 @@
+version: "3.1"
+
+intents:
+  - servicios
+  - adaptacion_cliente
+  - proceso_trabajo
+  - resultados_esperados
+  - medicion_exito
+  - saludo
+  - despedida
+  - nlu_fallback
+  - numeric_input
+
+responses:
+  utter_servicios:
+  - text: "Ofrecemos una amplia gama de servicios, desde el desarrollo de marca y diseño gráfico, gestión de redes sociales y campañas publicitarias hasta programas de Capacitación y Comunicación. Nuestro objetivo es ayudarte a construir una marca sólida y conectar con tu audiencia de manera efectiva."
+
+  utter_adaptacion_cliente:
+  - text: "Creemos que cada cliente es único, por lo que ofrecemos soluciones personalizadas. Realizamos un análisis exhaustivo de tu negocio y tus objetivos para desarrollar una estrategia a medida."
+
+  utter_proceso_trabajo:
+  - text: "Nuestro proceso comienza con una reunión para entender tus necesidades y expectativas. Luego, desarrollamos una propuesta detallada y un plan de acción. A lo largo del proyecto, mantenemos una comunicación abierta y transparente contigo."
+
+  utter_resultados_esperados:
+  - text: "Los resultados pueden variar dependiendo de tus objetivos y del mercado. Sin embargo, nuestros clientes suelen experimentar un aumento en el reconocimiento de marca, un mayor engagement en las redes sociales y un crecimiento en las ventas."
+
+  utter_medicion_exito:
+  - text: "Utilizamos una variedad de métricas para medir el éxito de cada campaña, como el alcance, la interacción, el tráfico del sitio web y el retorno de la inversión (ROI). Te proporcionaremos informes detallados para que puedas ver los resultados de primera mano."
+
+  utter_invalid_input:
+  - text: "Lo siento, no puedo procesar números ni secuencias numéricas. Por favor, hazme una pregunta sobre nuestros servicios usando palabras."
+
+  utter_default:
+  - text: "No he entendido tu mensaje. Por favor, pregúntame sobre nuestros servicios o selecciona una de las opciones disponibles."
+
+  utter_saludo:
+  - text: "Hola soy Anita, ¿en qué puedo ayudarte?"
+
+  utter_despedida:
+  - text: "Fue un gusto ayudarte, ¡Hasta la próxima!"
+
+actions:
+  - action_default_fallback
+  - action_validate_input
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

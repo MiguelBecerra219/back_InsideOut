@@ -1,0 +1,17 @@
+# Entornos virtuales y dependencias
+venv/
+rasa_env/
+*.egg-info/
+
+# Archivos y carpetas de Python
+__pycache__/
+*.py[cod]
+
+# Archivos de registro y desarrollo
+*.log
+*.sqlite3
+*.env
+
+# Archivos temporales de sistema
+.DS_Store
+Thumbs.db

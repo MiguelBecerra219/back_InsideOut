@@ -1,0 +1,83 @@
+version: "3.1"
+
+nlu:
+- intent: servicios
+  examples: |
+    - servicios
+    - ¿Qué servicios ofrecen?
+    - quiero saber los servicios
+
+- intent: adaptacion_cliente
+  examples: |
+    - ¿Cómo se adaptan a las necesidades de cada cliente?
+    - adaptación al cliente
+    - adaptacion al cliente
+    - personalización
+    - personalizacion
+    - necesidades del cliente
+
+- intent: proceso_trabajo
+  examples: |
+    - ¿Cuál es el proceso de trabajo?
+    - proceso
+    - metodologia de trabajo
+    - metodología de trabajo
+
+- intent: resultados_esperados
+  examples: |
+    - ¿Qué resultados puedo esperar?
+    - resultados
+    - expectativas de resultados
+
+- intent: medicion_exito
+  examples: |
+    - ¿Cómo miden el éxito de una campaña?
+    - métricas
+    - metricas
+    - medición de éxito
+    - medicion de éxito
+    - medicion de exito
+    - medición de exito
+
+- intent: numeric_input
+  examples: |
+    - 1
+    - 12
+    - 123
+    - 1234
+    - 12345
+    - 123456789
+    - 1234567890123456789
+
+- intent: saludo
+  examples: |
+    - hola
+    - buenos días
+    - buenas tardes
+    - buenas noches
+    - buen día
+    - buena noche
+    - buena tarde
+    - hey
+ 
+
+- intent: despedida
+  examples: |
+    - adiós
+    - hasta luego
+    - nos vemos
+    - nos vemos más tarde
+    - chao
+    - hasta mañana
+    - hasta más tarde
+    - hasta pronto
+    - gracias
+    - muchas gracias
+
+
+
+- regex: numeric_pattern
+  examples: |
+    - ^[0-9]+$
+    - .*\d+.*
+

@@ -1,0 +1,16 @@
+# Ignorar cachés y archivos compilados de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar entornos virtuales
+venv/
+rasa_env/
+.env
+*.sqlite3
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+

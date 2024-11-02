@@ -1,0 +1,45 @@
+FROM python:3.9-slim
+FROM rasa/rasa:3.6.2
+
+# Configura variables de entorno para reducir el uso de memoria
+ENV PYTHONUNBUFFERED=1
+ENV PORT=5055
+
+# Configura el directorio de trabajo
+COPY . /app
+WORKDIR /app
+
+# Instala solo las dependencias esenciales
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    python3-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copia los archivos necesarios
+COPY requirements.txt ./
+
+# Instala las dependencias
+RUN pip install --no-cache-dir -r requirements.txt \
+    && pip cache purge
+
+# Copia el resto de los archivos
+COPY . .
+
+# Limpia archivos innecesarios
+RUN apt-get purge -y --auto-remove build-essential python3-dev \
+    && rm -rf /var/lib/apt/lists/* \
+    && find . -type d -name "__pycache__" -exec rm -r {} + \
+    && rm -rf /root/.cache /tmp/* /var/tmp/*
+
+HEALTHCHECK --interval=60s --timeout=60s --start-period=60s --retries=5 \
+    CMD curl -f http://localhost:$PORT/health || exit 1
+
+
+# Expone el puerto
+EXPOSE 5055
+
+# Inicia el servidor
+EXPOSE 5055
+CMD ["rasa", "run", "actions", "--cors", "*", "--port", "5055"]
+
+#CMD rasa run actions --cors "*" --port "5055" --endpoints "endpoints.yml" --credentials "credentials.yml"

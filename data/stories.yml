@@ -1,0 +1,39 @@
+version: "3.1"
+
+stories:
+
+- story: respuesta servicios
+  steps:
+  - intent: servicios
+  - action: utter_servicios
+
+
+- story: respuesta adaptacion
+  steps:
+  - intent: adaptacion_cliente
+  - action: utter_adaptacion_cliente
+
+- story: respuesta proceso
+  steps:
+  - intent: proceso_trabajo
+  - action: utter_proceso_trabajo
+
+- story: respuesta resultados
+  steps:
+  - intent: resultados_esperados
+  - action: utter_resultados_esperados
+
+- story: respuesta medicion
+  steps:
+  - intent: medicion_exito
+  - action: utter_medicion_exito
+
+- story: respuesta saludo
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+
+- story: respuesta despedida
+  steps:
+  - intent: despedida
+  - action: utter_despedida

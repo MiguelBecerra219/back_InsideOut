@@ -1,0 +1,10 @@
+[
+  {
+    "name": "numeric_pattern",
+    "pattern": ".*\\d+.*"
+  },
+  {
+    "name": "numeric_pattern",
+    "pattern": "^[0-9]+$"
+  }
+]
